@@ -4,7 +4,7 @@ from tkinter import ttk
 from tkinter import messagebox
 import customtkinter as ctk
 from CTkTreeview import CTkTreeview
-
+from PIL import Image, ImageTk
 
 
 def conectar():
@@ -107,13 +107,20 @@ def delete_usuario():
 # INTERFACE
 
 root = ctk.CTk()
-root.geometry('830x1750')
-root.title('CADASTRO XYZ')
+root.geometry('820x800')
+root.title('CADASTRO')
 caminho =('icone.ico')
 root.iconbitmap(caminho)
 ctk.set_appearance_mode('dark')
 
-ctk.CTkLabel(root, text="CADASTRO XYZ", font= ('arial', 15)).grid(column=0, row=0,padx=10)
+# TITULO
+
+ctk.CTkLabel(root, text="CADASTRO", font= ('Courier New', 24,'bold')).grid(column=0, row=0,padx=10)
+
+img = ctk.CTkImage(dark_image=Image.open('sua_logo.png'),size=(30, 30))
+label_img = ctk.CTkLabel(root,image=img,text='')
+label_img.place(x=470,y=0)
+
 
 # DADOS
 
@@ -121,16 +128,16 @@ fr0 =  ctk.CTkFrame(root)
 
 fr0.grid()
 
-nome_lb = ctk.CTkLabel(fr0, text="Nome:", font= ('arial', 15))
+nome_lb = ctk.CTkLabel(fr0, text="Nome:", font= ('Times New Roman', 17))
 nome_lb.grid(column=0, row=1,padx=10,pady=10)
 
-email_lb = ctk.CTkLabel(fr0, text="E-mail:", font= ('arial', 15))
+email_lb = ctk.CTkLabel(fr0, text="E-mail:", font= ('Times New Roman', 17))
 email_lb.grid(column=0, row=2,padx=10,pady=10)
 
-telefone_lb = ctk.CTkLabel(fr0, text="Telefone:", font= ('arial', 15))
+telefone_lb = ctk.CTkLabel(fr0, text="Telefone:", font= ('Times New Roman', 17))
 telefone_lb.grid(column=0, row=3,padx=10,pady=10)
 
-endereco_lb = ctk.CTkLabel(fr0, text="Endereço:", font= ('arial', 15))
+endereco_lb = ctk.CTkLabel(fr0, text="Endereço:", font= ('Times New Roman', 17))
 endereco_lb.grid(column=0, row=4,padx=10,pady=10)
 
 nome = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='Nome')
@@ -151,13 +158,13 @@ fr = ctk.CTkLabel(root,text='')
 fr.grid(padx=10, columnspan=2)
 
 
-btn_salvar = ctk.CTkButton(fr,text='CADASTRAR',font=('arial',15), command=inserir_usuario)
+btn_salvar = ctk.CTkButton(fr,text='CADASTRAR',font=('Georgia',15,'bold'), command=inserir_usuario)
 btn_salvar.grid(row=6, column=0,padx=10,pady=10)
 
-btn_att = ctk.CTkButton(fr,text='ATUALIZAR',font=('arial',15),command=atualizar)
+btn_att = ctk.CTkButton(fr,text='ATUALIZAR',font=('Georgia',15,'bold'),command=atualizar)
 btn_att.grid(row=6, column=2,padx=10,pady=10)
 
-btn_delete = ctk.CTkButton(fr,text='DELETAR',font=('arial',15),command=delete_usuario)
+btn_delete = ctk.CTkButton(fr,text='DELETAR',font=('Georgia',15,'bold'),command=delete_usuario)
 btn_delete.grid(row=6, column=3,padx=10,pady=10)
 
 # TREE VIEW
@@ -167,12 +174,9 @@ fr2.grid(pady=20, sticky="nsew")
 
 colunas = ( 'NOME', 'E-MAIL','TELEFONE','ENDEREÇO')
 tree =  CTkTreeview(fr2, columns=colunas, show='headings', height=18,)
-
-
 tree.grid(row=0, column=0, sticky='nsew')
-x =ctk.CTkScrollbar(fr2,orientation='vertical',command=tree.yview)
-x.grid(row=0, column=1,sticky='ns')
-# ----------------
+
+# ESTILO TREE VIEW
 
 style = ttk.Style()
 style.theme_use("default")
