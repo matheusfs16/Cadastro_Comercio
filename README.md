@@ -15,7 +15,8 @@ https://www.python.org/downloads/
 No terminal/cmd execute:
 ```bash
   pip install customtkinter
-  pip install CTkTreeview
+  pip install https://github.com/JohnDevlopment/CTkTreeview/archive/refs/heads/main.zip
+  pip install icecream
 ```
 
 Obs: Tkinter já vem instalado com o Python.
