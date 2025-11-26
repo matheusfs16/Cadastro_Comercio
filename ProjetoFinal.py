@@ -5,16 +5,6 @@ from tkinter import messagebox
 import customtkinter as ctk
 from CTkTreeview import CTkTreeview
 
-# Criar um sistema que permita o cadastro de novos clientes
-
-# com informações como nome, e-mail, telefone e endereço. Além disso, o
-
-# sistema permitirá a consulta, edição e exclusão dos dados dos clientes
-
-# através de uma interface gráfica simples.
-
-
-
 def conectar():
     return sqlite3.connect('banco.db')
 
@@ -72,7 +62,7 @@ def mostrar_usuario():
 def atualizar():
     selecao = tree.selection()
     if selecao:
-        dado_edit =tree.item(selecao)['values'][0]
+        dado_edit =tree.item(selecao)['values'][3]
         novo_telefone = telefone.get()
         novo_nome = nome.get()
         novo_email = email.get()
@@ -142,16 +132,16 @@ telefone_lb.grid(column=0, row=3,padx=10,pady=10)
 endereco_lb = ctk.CTkLabel(fr0, text="Endereço:", font= ('arial', 15))
 endereco_lb.grid(column=0, row=4,padx=10,pady=10)
 
-nome = ctk.CTkEntry(fr0,font=('arial',15),)
+nome = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='Nome')
 nome.grid(column=1, row=1,padx=10,pady=10)
 
-email = ctk.CTkEntry(fr0,font=('arial',15))
+email = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='E-mail')
 email.grid(column=1, row=2,padx=10,pady=10)
 
-telefone = ctk.CTkEntry(fr0,font=('arial',15))
+telefone = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='Telefone')
 telefone.grid(column=1, row=3,padx=10,pady=10)
 
-endereco = ctk.CTkEntry(fr0,font=('arial',15))
+endereco = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='Endereço')
 endereco.grid(column=1, row=4,padx=10,pady=10)
 
 # BOTÕES E FRAME DELES
@@ -175,10 +165,12 @@ fr2 =  ctk.CTkLabel(root, text='')
 fr2.grid(pady=20, sticky="nsew")
 
 colunas = ( 'NOME', 'E-MAIL','TELEFONE','ENDEREÇO')
-tree =  CTkTreeview(fr2, columns=colunas, show='headings', height=18)
+tree =  CTkTreeview(fr2, columns=colunas, show='headings', height=18,)
 
-tree.configure(yscrollcommand=lambda *args: None)
-tree.grid(row=0, column=0,padx=10, sticky='nsew')
+
+tree.grid(row=0, column=0, sticky='nsew')
+x =ctk.CTkScrollbar(fr2,orientation='vertical',command=tree.yview)
+x.grid(row=0, column=1,sticky='ns')
 # ----------------
 
 style = ttk.Style()
@@ -200,10 +192,6 @@ style.configure(
 )
 
 
-# Scrollbar LATERAL funcional
-
-
-# -------------
 with tree.columns() as tc:
     tc.minwidth("NOME", 150)
     tc.minwidth("E-MAIL", 150)
