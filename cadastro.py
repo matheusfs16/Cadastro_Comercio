@@ -118,7 +118,7 @@ ctk.set_appearance_mode('dark')
 ctk.CTkLabel(root, text="CADASTRO", font= ('Courier New', 24,'bold')).grid(column=0, row=0,padx=10)
 
 img = ctk.CTkImage(dark_image=Image.open('sua_logo.png'),size=(30, 30))
-label_img = ctk.CTkLabel(root,image=img,text='')
+label_img = ctk.CTkLabel(root,image=img,text='')    
 label_img.place(x=470,y=0)
 
 
@@ -140,16 +140,16 @@ telefone_lb.grid(column=0, row=3,padx=10,pady=10)
 endereco_lb = ctk.CTkLabel(fr0, text="Endereço:", font= ('Times New Roman', 17))
 endereco_lb.grid(column=0, row=4,padx=10,pady=10)
 
-nome = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='Nome')
+nome = ctk.CTkEntry(fr0,font=('arial',14),placeholder_text='Seu primeiro nome')
 nome.grid(column=1, row=1,padx=10,pady=10)
 
-email = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='E-mail')
+email = ctk.CTkEntry(fr0,font=('arial',14),placeholder_text='nome@exemplo.com')
 email.grid(column=1, row=2,padx=10,pady=10)
 
-telefone = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='Telefone')
+telefone = ctk.CTkEntry(fr0,font=('arial',14),placeholder_text='Telefone(com DDD)')
 telefone.grid(column=1, row=3,padx=10,pady=10)
 
-endereco = ctk.CTkEntry(fr0,font=('arial',15),placeholder_text='Endereço')
+endereco = ctk.CTkEntry(fr0,font=('arial',14),placeholder_text='Nome da rua')
 endereco.grid(column=1, row=4,padx=10,pady=10)
 
 # BOTÕES E FRAME DELES
@@ -177,7 +177,6 @@ tree =  CTkTreeview(fr2, columns=colunas, show='headings', height=18,)
 tree.grid(row=0, column=0, sticky='nsew')
 
 # ESTILO TREE VIEW
-
 style = ttk.Style()
 style.theme_use("default")
 
