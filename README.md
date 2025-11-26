@@ -39,7 +39,7 @@ O sistema criará automaticamente o banco banco.db e exibirá a interface gráfi
 
 - Permissão de escrita na pasta para gerar o banco SQLite
 
-- Arquivo de ícone icone.ico na mesma pasta do arquivo de cadastro
+- Arquivo de ícone icone.ico e imagem de sua logo na mesma pasta do arquivo de cadastro
 
 ## 🛠️ Tecnologias utilizadas
 **💻 Linguagens**
