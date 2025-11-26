@@ -62,8 +62,6 @@ O sistema criará automaticamente o banco banco.db e exibirá a interface gráfi
 
 - PyCharm
 
-- Sublime Text
-
 - IDLE (vem com Python)
 
 ## 🧱 Arquitetura e funcionalidades
