@@ -82,7 +82,6 @@ O sistema criará automaticamente o banco banco.db e exibirá a interface gráfi
 - **✔ Exibição dos cadastros**
 
     Tabela totalmente estilizada com CustomTkinter + CTkTreeview.
-    Tema dark.
 
 -  **✔ Banco de dados local**
 
