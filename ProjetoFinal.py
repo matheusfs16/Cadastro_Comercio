@@ -5,6 +5,8 @@ from tkinter import messagebox
 import customtkinter as ctk
 from CTkTreeview import CTkTreeview
 
+
+
 def conectar():
     return sqlite3.connect('banco.db')
 
@@ -102,17 +104,16 @@ def delete_usuario():
         messagebox.showerror("",'ERRO AO DELETAR O DADO')
 
 
-
 # INTERFACE
 
 root = ctk.CTk()
 root.geometry('830x1750')
-root.title('CADASTRO')
+root.title('CADASTRO XYZ')
 caminho =('icone.ico')
 root.iconbitmap(caminho)
 ctk.set_appearance_mode('dark')
 
-ctk.CTkLabel(root, text="CADASTRO:", font= ('arial', 15)).grid(column=0, row=0,padx=10)
+ctk.CTkLabel(root, text="CADASTRO XYZ", font= ('arial', 15)).grid(column=0, row=0,padx=10)
 
 # DADOS
 
@@ -150,7 +151,7 @@ fr = ctk.CTkLabel(root,text='')
 fr.grid(padx=10, columnspan=2)
 
 
-btn_salvar = ctk.CTkButton(fr,text='SALVAR',font=('arial',15), command=inserir_usuario)
+btn_salvar = ctk.CTkButton(fr,text='CADASTRAR',font=('arial',15), command=inserir_usuario)
 btn_salvar.grid(row=6, column=0,padx=10,pady=10)
 
 btn_att = ctk.CTkButton(fr,text='ATUALIZAR',font=('arial',15),command=atualizar)
