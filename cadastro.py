@@ -158,13 +158,13 @@ fr = ctk.CTkLabel(root,text='')
 fr.grid(padx=10, columnspan=2)
 
 
-btn_salvar = ctk.CTkButton(fr,text='CADASTRAR',font=('Georgia',15,'bold'), command=inserir_usuario)
+btn_salvar = ctk.CTkButton(fr,text='CADASTRAR',font=('Georgia',15,'bold'), command=inserir_usuario,corner_radius=10,fg_color='#008080')
 btn_salvar.grid(row=6, column=0,padx=10,pady=10)
 
-btn_att = ctk.CTkButton(fr,text='ATUALIZAR',font=('Georgia',15,'bold'),command=atualizar)
+btn_att = ctk.CTkButton(fr,text='ATUALIZAR',font=('Georgia',15,'bold'),command=atualizar,corner_radius=10,fg_color='#008B8B')
 btn_att.grid(row=6, column=2,padx=10,pady=10)
 
-btn_delete = ctk.CTkButton(fr,text='DELETAR',font=('Georgia',15,'bold'),command=delete_usuario)
+btn_delete = ctk.CTkButton(fr,text='DELETAR',font=('Georgia',15,'bold'),command=delete_usuario,corner_radius=10,fg_color='#009696') 
 btn_delete.grid(row=6, column=3,padx=10,pady=10)
 
 # TREE VIEW
